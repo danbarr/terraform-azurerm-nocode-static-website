@@ -43,7 +43,7 @@ variable "storage_tier" {
   default     = "Standard"
   validation {
     condition     = contains(["Standard", "Premium"], var.storage_tier)
-    error_message = "Tier must be Standard or Premium"
+    error_message = "Tier must be Standard or Premium."
   }
 }
 
@@ -53,6 +53,15 @@ variable "storage_replication_type" {
   default     = "LRS"
   validation {
     condition     = contains(["LRS", "GRS"], var.storage_replication_type)
-    error_message = "Please use LRS or GRS only"
+    error_message = "Please use LRS or GRS only."
+  }
+}
+
+variable "delete_retention_days" {
+  type        = number
+  description = "Number of days to retain deleted items."
+  validation {
+    condition     = var.delete_retention_days >= 1 && var.delete_retention_days <= 30
+    error_message = "Retention days must be between 1 and 30 days."
   }
 }

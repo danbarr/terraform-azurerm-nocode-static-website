@@ -36,6 +36,13 @@ resource "azurerm_storage_account" "website" {
   enable_https_traffic_only = true
   min_tls_version           = "TLS1_2"
 
+  blob_properties {
+    versioning_enabled = true
+    delete_retention_policy {
+      days = var.delete_retention_days
+    }
+  }
+
   static_website {
     index_document = "index.html"
   }
