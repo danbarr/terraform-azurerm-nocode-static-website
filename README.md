@@ -39,6 +39,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_delete_retention_days"></a> [delete\_retention\_days](#input\_delete\_retention\_days) | Number of days to retain deleted items. | `number` | n/a | yes |
 | <a name="input_department"></a> [department](#input\_department) | Value for the department tag. | `string` | `"WebDev"` | no |
 | <a name="input_env"></a> [env](#input\_env) | Value for the environment tag. | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | The region where the resources are created. | `string` | n/a | yes |
